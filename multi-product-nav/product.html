@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id="pulse" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Square Dashboard</title>
+	<meta http-equiv="description" content="page description" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+	<!-- Nav header -->
+
+	<nav>
+		<button class="icon secondary menu"></button>
+		<div class="logo"></div>
+		<input type="text" class="search" placeholder="Search">
+		<div class="right-actions">
+			<button class="icon tertiary search" style="background-image: url('assets/search.svg'); background-size: 16px 16px;"></button>
+			<button class="icon tertiary notifications" style="background-image: url('assets/notifications.svg')"></button>
+			<button class="icon tertiary" style="background-image: url('assets/messages.svg')"></button>
+			<button class="icon tertiary" style="background-image: url('assets/setup-guide.svg')"></button>
+		</div>
+	</nav>
+
+
+	<!-- App menu -->
+
+	<div class="app-menu">
+		<div class="header">
+			<button class="icon secondary menu"></button>
+		</div>
+
+
+		<!-- My products -->
+
+		<section class="my-products">
+			<div class="subheader">
+				<h4 class="invisible">My products</h4>
+				<button class="invisible small tertiary">Edit</button>
+			</div>
+			<ul>
+				<li>
+					<div class="product-icon home"></div>
+					<a href="index.html"><p class="invisible emphasis-30">Home</p></a>
+				</li>
+				<li class="active">
+					<div class="product-icon checkout"></div>
+					<a href=#><p class="invisible emphasis-30">Checkout</p></a>
+				</li>
+				<li>
+					<div class="product-icon items"></div>
+					<a href=#><p class="invisible emphasis-30">Items</p></a>
+				</li>
+				<li>
+					<div class="product-icon customers"></div>
+					<a href=#><p class="invisible emphasis-30">Customers</p></a>
+				</li>
+				<li>
+					<div class="product-icon team"></div>
+					<a href=#><p class="invisible emphasis-30">Team</p></a>
+				</li>
+				<li>
+					<div class="product-icon marketing"></div>
+					<a href=#><p class="invisible emphasis-30">Marketing</p></a>
+				</li>
+			</ul>
+		</section>
+
+
+		<!-- All products -->
+
+		<section class="invisible all-products">
+			<div class="subheader">
+				<h4>All products</h4>
+			</div>
+			<ul>
+				<li tabindex="0"><p class="emphasis-30">Money management</p></li>
+				<li tabindex="0"><p class="emphasis-30">Payments</p></li>
+				<li tabindex="0"><p class="emphasis-30">Items & orders</p></li>
+				<li tabindex="0"><p class="emphasis-30">Customer relationships</p></li>
+				<li tabindex="0"><p class="emphasis-30">Team management</p></li>
+			</ul>
+		</section>
+
+
+		<!-- Account row -->
+
+		<div class="footer">
+			<div class="row" tabindex="0">
+				<div class="image"><p class="emphasis-30">RA</p></div>
+				<div class="invisible text">
+					<p class="emphasis-30">Russell Andrews</p>
+					<p class="paragraph-20">Square, Inc</p>
+				</div>
+			</div>
+		</div>
+
+
+<!-- Popovers -->
+
+		<div class="popover money-management">
+			<div class="popover-content">
+				<ul>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/reports.svg')"></div>
+							<p class="emphasis-30">Reports</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/transactions.svg')"></div>
+							<p class="emphasis-30">Transactions</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/banking.svg')"></div>
+							<p class="emphasis-30">Banking</p>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="popover payments">
+			<div class="popover-content">
+				<ul>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/invoices.svg')"></div>
+							<p class="emphasis-30">Invoices</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/virtual-terminal.svg')"></div>
+							<p class="emphasis-30">Virtual Terminal</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/gift-cards.svg')"></div>
+							<p class="emphasis-30">Gift Cards</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/subscriptions.svg')"></div>
+							<p class="emphasis-30">Subscriptions</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/online-checkout.svg')"></div>
+							<p class="emphasis-30">Online Checkout</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/devices.svg')"></div>
+							<p class="emphasis-30">Devices</p>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="popover items-and-orders">
+			<div class="popover-content">
+				<ul>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/Items.svg')"></div>
+							<p class="emphasis-30">Items</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/menus.svg')"></div>
+							<p class="emphasis-30">Menus</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/online.svg')"></div>
+							<p class="emphasis-30">Online</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/orders.svg')"></div>
+							<p class="emphasis-30">Orders</p>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="popover customer-relationships">
+			<div class="popover-content">
+				<ul>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/customers.svg')"></div>
+							<p class="emphasis-30">Customers</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/marketing.svg')"></div>
+							<p class="emphasis-30">Marketing</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/loyalty.svg')"></div>
+							<p class="emphasis-30">Loyalty</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/appointments.svg')"></div>
+							<p class="emphasis-30">Appointments</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/contracts.svg')"></div>
+							<p class="emphasis-30">Contracts</p>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="popover team-management">
+			<div class="popover-content">
+				<ul>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/team.svg')"></div>
+							<p class="emphasis-30">Team</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/payroll.svg')"></div>
+							<p class="emphasis-30">Payroll</p>
+					</a></li>
+					<li><a href=#>
+							<div class="product-icon" style="background-image: url('assets/timecards.svg')"></div>
+							<p class="emphasis-30">Timecards</p>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="veil"></div>
+
+	<div class="main-content">
+		<div class="secondary-nav">
+			<!-- <h3>Checkout</h3> -->
+			<ul>
+				<li class="active">
+					<a href="#"><p class="emphasis-30">Secondary</p></a>
+				</li>
+				<li>
+					<a href="#"><p class="emphasis-30">Secondary</p></a>
+				</li>
+				<li>
+					<a href="#"><p class="emphasis-30">Secondary</p></a>
+				</li>
+				<li>
+					<a href="#"><p class="emphasis-30">Secondary</p></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+
+</html>
+

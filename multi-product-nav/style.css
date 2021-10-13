@@ -1,0 +1,537 @@
+*{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz--font-smoothing: antialiased;
+}
+
+html{
+
+	/* Colors */
+	--emphasis-fill: #006aff;
+	--emphasis-fill-10: #0055CC;
+	--emphasis-fill-20: #005FE5;
+	--emphasis-fill-30: #CCE1FF;
+	--emphasis-fill-40: #E5F0FF;
+	--emphasis-text: #005AD9;
+	--emphasis-20: #E5F0FF;
+	--emphasis-30: #CCE1FF;
+	--black: #000000;
+	--fill-20: rgba(0,0,0,0.3);
+	--fill-30: rgba(0,0,0,0.15);
+	--fill-40: rgba(0,0,0,0.05);
+	--fill-50: rgba(0, 0, 0, 0.03);;
+	--text-10: rgba(0,0,0,0.9);
+	--text-20: rgba(0,0,0,0.55);
+	--text-30: rgba(0,0,0,0.3);
+	--white: #FFFFFF;
+	--critical: #CC0023;
+
+	/* States */
+	--elevation-10: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 4px rgba(0, 0, 0, 0.1);
+	--elevation-20: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 2px 16px rgba(0, 0, 0, 0.1);
+	--elevation-30: 0px 8px 16px rgba(0, 0, 0, 0.1), 0px 4px 32px rgba(0, 0, 0, 0.1);
+
+	/* Shadows */
+	--shadow-static: 0px 0px 2px rgba(0, 0, 0, 0.15), 
+					 0px 1px 6px rgba(0, 0, 0, 0.15);
+	--shadow-interactive: 0px 2px 8px rgba(0, 0, 0, 0.15), 
+						  0px 4px 24px rgba(0, 0, 0, 0.15);
+
+	/* Animation Timiing */
+	--transition-short: 150ms;
+	--transition-long: 300ms;
+
+}
+
+div.clear{
+	clear: both;
+}
+
+*:focus{
+	outline: none;
+}
+
+/* Text Styles */
+
+@font-face {
+    font-family: SQ-Market-Bold;
+    src: url(fonts/SQMarket-Bold.otf);
+}
+
+@font-face {
+    font-family: SQ-Market-Medium;
+    src: url(fonts/SQMarket-Medium.otf);
+}
+
+@font-face {
+    font-family: SQ-Market;
+    src: url(fonts/SQMarket-Regular.otf);
+}
+
+h1, h2, h3, h4, h5, ul li a{
+	font-family: SQ-Market-Bold, sans-serif;
+	color: var(--text-10);
+}
+
+h1{
+	font-size: 32px;
+	line-height: 40px;
+}
+
+h2{
+	font-size: 24px;
+	line-height: 32px;
+}
+
+
+h3{
+	font-size: 18px;
+	line-height: 26px;
+}
+
+h4{
+	font-size: 14px;
+	line-height: 22px;
+}
+
+h5{
+	font-size: 14px;
+	line-height: 22px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+p, input, tr{
+	font-family: SQ-Market, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--text-10);
+}
+
+.paragraph-20, .emphasis-20{
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.emphasis-30, .emphasis-20, .emphasis-10 {
+	font-family: SQ-Market-Medium, sans-serif;
+}
+
+.large{
+	font-size: 16px;
+}
+
+a{
+	text-decoration: none;
+	color: var(--text-10);
+	cursor: pointer;
+}
+
+button{
+	height: 48px;
+	min-width: 48px;
+	background: transparent;
+	border: none;
+	border-radius: 6px;
+	font-family: SQ-Market-Medium;
+	font-size: 16px;
+	line-height: 24px;
+	cursor: pointer;
+	padding: 12px 16px;
+	transition: 150ms;
+}
+
+button.small{
+	height: 40px;
+	min-width: 40px;
+	padding: 9px 4px;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+button.primary{
+	background-color: var(--emphasis);
+	color: var(--white);
+}
+
+button.secondary{
+	background-color: var(--fill-40);
+}
+
+button.secondary, button.tertiary{
+	color: var(--emphasis-text);
+}
+
+button.secondary:hover, button.tertiary:hover{
+	background-color: var(--emphasis-20);
+}
+
+button.icon{
+	background-size: 28px 28px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 0;
+}
+
+/* Page layout */
+div.left,
+div.right{
+	width: 50%;
+	position: absolute;
+}
+
+div.left{
+	left:  0;
+	top: 0;
+	bottom: 0;
+	right: auto;
+}
+
+div.right{
+	left:  auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: var(--fill-50);
+}
+
+/* Payment products */
+
+div.payment-product-list{
+	position: absolute;
+	left: 32px;
+	right: 32px;
+	top: 32px;
+	bottom: 32px;
+	height: 300px;
+	margin: auto;
+	text-align: center;
+}
+
+div.payment-product-list ul li{
+	display: inline-block;
+	padding: 8px 6px;
+}
+
+div.payment-product-list ul li h3{
+	background: var(--fill-40);
+	padding:  12px 24px;
+	border-radius: 100px;
+	cursor: pointer;
+}
+
+div.payment-product-list ul li h3:hover{
+	background: var(--emphasis-fill-40);
+}
+
+div.payment-product-list ul li h3:active{
+	background: var(--emphasis-fill-30);
+}
+
+div.payment-product-list ul li h3.active{
+	background: var(--emphasis-fill);
+	color: var(--white);
+}
+
+div.payment-product-list ul li h3.active:hover{
+	background: var(--emphasis-fill-20);
+}
+
+div.payment-product-list ul li h3.active:active{
+	background: var(--emphasis-fill-10);
+}
+
+/* App menu */
+
+div.app-menu{
+	background: var(--white);
+	overflow-y: auto;
+	border-radius: 12px;
+	box-shadow: var(--elevation-30);
+	width: 320px;
+	position: absolute;
+	top: 32px;
+	bottom: 32px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+div.app-menu div.header{
+	padding: 12px;
+	background: var(--white);
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	height: 72px;
+}
+
+div.app-menu button.menu,
+nav button.menu{
+	background-image: url('assets/Menu.svg')
+}
+
+div.app-menu section{
+	margin-bottom: 24px;
+	padding: 0px 12px;
+}
+
+div.app-menu section div.subheader{
+	padding: 9px 12px;
+	position: relative;
+}
+
+div.app-menu section div.subheader button.small{
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+div.app-menu section ul li{
+	position: relative;
+	border-radius: 6px;
+	transition: 150ms;
+	cursor: pointer;
+}
+
+div.app-menu section ul li p{
+	padding: 12px;
+}
+
+div.app-menu section.my-products{
+	margin-top: 16px;
+}
+
+div.app-menu section.my-products ul li p{
+	padding: 12px 12px 12px 50px;
+}
+
+div.app-menu section.all-products ul li:after{
+	content:'';
+	position: absolute;
+	background: url('assets/drill-in.svg');
+	height: 16px;
+	width: 16px;
+	right: 12px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+div.app-menu section ul li div.product-icon{
+	height: 28px;
+	width: 28px;
+	position: absolute;
+	left: 10px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+div.app-menu section ul li.active{
+	background: var(--emphasis-20);
+}
+
+div.app-menu section ul li.active p{
+	color: var(--emphasis-text);
+}
+
+div.app-menu section ul li:hover{
+	background: var(--emphasis-20);
+}
+
+div.app-menu section ul li:active{
+	background: var(--emphasis-30);
+}
+
+div.app-menu section ul li:focus-within,
+button:focus,
+input:focus,
+div.row:focus{
+	box-shadow: 0px 0px 0px 2px rgba(0, 106, 255, 0.5) inset;
+}
+
+a:focus,
+button:focus,
+input{
+	outline: none;
+}
+
+.invisible{
+	opacity: 0;
+	white-space: nowrap;
+	transition: 300ms;
+}
+
+body.menu-open div.app-menu .invisible,
+body.menu-locked div.app-menu .invisible{
+	opacity: 1;
+}
+
+div.app-menu section ul li div.product-icon.home{
+	background-image: url('assets/Home.svg');
+}
+
+div.app-menu section ul li.active div.product-icon.home{
+	background-image: url('assets/Home-active.svg');
+}
+
+div.app-menu section ul li div.product-icon.checkout{
+	background-image: url('assets/Checkout.svg');
+}
+
+div.app-menu section ul li.active div.product-icon.checkout{
+	background-image: url('assets/Checkout-active.svg');
+}
+
+div.app-menu section ul li div.product-icon.items{
+	background-image: url('assets/Items.svg');
+}
+
+div.app-menu section ul li.active div.product-icon.items{
+	background-image: url('assets/Items-active.svg');
+}
+
+div.app-menu section ul li div.product-icon.customers{
+	background-image: url('assets/Customers.svg');
+}
+
+div.app-menu section ul li.active div.product-icon.customers{
+	background-image: url('assets/Customers-active.svg');
+}
+
+div.app-menu section ul li div.product-icon.team{
+	background-image: url('assets/Team.svg');
+}
+
+div.app-menu section ul li.active div.product-icon.team{
+	background-image: url('assets/Team-active.svg');
+}
+
+div.app-menu section ul li div.product-icon.marketing{
+	background-image: url('assets/Marketing.svg');
+}
+
+div.app-menu section ul li.active div.product-icon.marketing{
+	background-image: url('assets/Marketing-active.svg');
+}
+
+div.app-menu div.footer{
+	background: var(--white);
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	padding: 12px;
+	width: 72px;
+	transition: 300ms;
+	border-right: 1px solid var(--fill-40);
+}
+
+div.app-menu div.footer div.row{
+	padding: 12px 16px;
+	transition: 150ms;
+	cursor: pointer;
+	border-radius: 6px;
+	position: relative;
+}
+
+body.menu-open div.app-menu div.footer,
+body.menu-locked div.app-menu div.footer{
+	width: 320px;
+}
+
+div.row div.image{
+	background: var(--fill-20);
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	left: 4px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+div.row div.image p{
+	color: var(--white);
+	text-align: center;
+	line-height: 40px;
+}
+
+div.row div.text{
+	padding-left: 44px;
+}
+
+div.app-menu div.row:hover {
+	background: var(--emphasis-20);
+}
+
+div.app-menu div.row:active {
+	background: var(--emphasis-30);
+}
+
+/* Popovers */
+
+div.popover{
+	position: fixed;
+	z-index: 4;
+	padding: 8px;
+	padding-top: 16px;
+	left: 320px;
+	min-width: 272px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 200ms, padding-top 200ms, visibility 0s 200ms;
+}
+
+div.popover.show{
+	opacity: 1;
+	padding-top: 0;
+	visibility: visible;
+	transition: opacity 200ms 100ms, padding-top 200ms 100ms;
+}
+
+div.popover-content{
+	background: var(--white);
+	padding: 8px 12px;
+	border-radius: 6px;
+	box-shadow: var(--elevation-20);
+}
+
+div.popover ul li a p{
+	padding: 12px;
+	padding-left: 52px;
+}
+
+div.popover ul li div.product-icon{
+	position: absolute;
+	left: 12px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 28px;
+	width: 28px;
+}
+
+div.popover ul li{
+	border-radius: 6px;
+	position: relative;
+	cursor:pointer;
+	transition: 150ms;
+}
+
+div.popover ul li:hover{
+	background: var(--emphasis-20);
+}
+
+div.popover ul li:active{
+	background: var(--emphasis-30);
+}
