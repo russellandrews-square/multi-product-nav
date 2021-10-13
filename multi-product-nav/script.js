@@ -72,8 +72,6 @@ $(document).ready(function(){
 			"Customers",
 		];
 
-		var newArray = [];
-
 		// if ( ($(this).text() == "Square Point of Sale") && ( $(this).hasClass("active") == true ) ){
 		// 	newArray = productArray.concat(squarepointofsale);
 		// } 
@@ -86,10 +84,6 @@ $(document).ready(function(){
 			console.log("hey");
 
 			var thisText = $(this).text();
-
-			var noSpaces = thisText.replace(/ /g,'');
-
-			var lowerCase = noSpaces.toLowerCase();
 
 			if ( thisText == "Square Point of Sale" ){
 				for ( var i of squarepointofsale){
@@ -126,25 +120,22 @@ $(document).ready(function(){
 			}
 		});
 
-		var newNewArray = productArray.filter(function(elem, index, self) {
+		var newArray = productArray.filter(function(elem, index, self) {
 	    	return index === self.indexOf(elem);
 	  	});
 	  	
 	  	$("section.my-products ul li:not(.home)").remove();
 
-		$.each(newNewArray, function(){
+		$.each(newArray, function(){
 
 			var string = this;
-
 			var text = string.toString();
-
 			var noDash = text.replace(/\s+/g, '-');
 
 
 			$("section.my-products ul").append("<li><div class='product-icon' style='background-image: url(assets/product-icons/"+ noDash + ".svg)'></div><p class='emphasis-30'>"+ string + "</p></li>");
 		})
 
-		console.log(newNewArray);
 
 	})
 
