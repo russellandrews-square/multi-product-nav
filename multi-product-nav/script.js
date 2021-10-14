@@ -73,7 +73,6 @@ $(document).ready(function(){
 		];
 
 		$("div.payment-product-list ul li h3.active").each(function(){
-			console.log("hey");
 
 			var thisText = $(this).text();
 
@@ -126,6 +125,80 @@ $(document).ready(function(){
 
 			$("section.my-products ul").append("<li><div class='product-icon' style='background-image: url(assets/product-icons/"+ noDash + ".svg)'></div><p class='emphasis-30'>"+ text + "</p></li>");
 		})
+
+
+		var num = $("div.payment-product-list ul li h3.active").length;
+
+		if (num > 0 ){
+			$("div#select-payment-products").addClass("completed");
+		} else if ( num == 0){
+			$("div#select-payment-products").removeClass("completed");
+		}
+
+		$("div.payment-product-list ul li h3").each(function(){
+
+			var thisText = $(this).text();
+
+			if ( thisText == "Square Point of Sale" ){
+				if ( $(this).hasClass("active") ){
+					$("div#download-SPOS").removeClass("hidden");
+				} else {
+					$("div#download-SPOS").addClass("hidden");
+				}
+			} else if ( thisText == "Square for Restaurants" ){
+				if ( $(this).hasClass("active") ){
+					$("div#download-RST").removeClass("hidden");
+					// $("div#choose-team-plan").removeClass("hidden");
+				} else {
+					$("div#download-RST").addClass("hidden");
+					// $("div#choose-team-plan").addClass("hidden");
+				}
+			} else if ( thisText == "Square for Retail" ){
+				if ( $(this).hasClass("active") ){
+					$("div#download-RTL").removeClass("hidden");
+					// $("div#choose-team-plan").removeClass("hidden");
+				} else {
+					$("div#download-RTL").addClass("hidden");
+					// $("div#choose-team-plan").addClass("hidden");
+				}
+			} else if ( thisText == "Appointments" ){
+				if ( $(this).hasClass("active") ){
+					$("div#schedule-appointment").removeClass("hidden");
+				} else {
+					$("div#schedule-appointment").addClass("hidden");
+				}
+			} else if ( thisText == "Invoices" ){
+				if ( $(this).hasClass("active") ){
+					$("div#create-invoice").removeClass("hidden");
+				} else {
+					$("div#create-invoice").addClass("hidden");
+				}
+			} else if ( thisText == "Virtual Terminal" ){
+				if ( $(this).hasClass("active") ){
+					$("div#send-vt-payment").removeClass("hidden");
+				} else {
+					$("div#send-vt-payment").addClass("hidden");
+				}
+			} else if ( thisText == "Online" ){
+				if ( $(this).hasClass("active") ){
+					$("div#create-website").removeClass("hidden");
+				} else {
+					$("div#create-website").addClass("hidden");
+				}
+			} else if ( thisText == "Online Checkout" ){
+				if ( $(this).hasClass("active") ){
+					$("div#create-checkout-link").removeClass("hidden");
+				} else {
+					$("div#create-checkout-link").addClass("hidden");
+				}
+			}
+
+			if ( $("h3.square-for-restaurants").hasClass("active") || $("h3.square-for-retail").hasClass("active") ){
+				$("div#choose-team-plan").removeClass("hidden");
+			} else{
+				$("div#choose-team-plan").addClass("hidden");
+			}
+		});
 	})
 });
 

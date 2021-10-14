@@ -130,6 +130,12 @@ a{
 	cursor: pointer;
 }
 
+a:focus,
+button:focus,
+input{
+	outline: none;
+}
+
 button{
 	height: 48px;
 	min-width: 48px;
@@ -188,6 +194,7 @@ div.left{
 	top: 0;
 	bottom: 0;
 	right: auto;
+	background: var(--fill-50);
 }
 
 div.right{
@@ -246,18 +253,17 @@ div.payment-product-list ul li h3.active:active{
 
 /* App menu */
 
+
 div.app-menu{
 	background: var(--white);
 	overflow-y: auto;
-	border-radius: 12px;
-	box-shadow: var(--elevation-30);
+	/*box-shadow: var(--elevation-30);*/
 	width: 320px;
 	position: absolute;
-	top: 32px;
-	bottom: 32px;
-	left: 0;
-	right: 0;
-	margin: auto;
+	left:  0;
+	bottom:  0;
+	top: 0px;
+	border-right: 1px solid var(--fill-40);
 }
 
 div.app-menu div.header{
@@ -358,118 +364,6 @@ div.row:focus{
 	box-shadow: 0px 0px 0px 2px rgba(0, 106, 255, 0.5) inset;
 }
 
-a:focus,
-button:focus,
-input{
-	outline: none;
-}
-
-.invisible{
-	opacity: 0;
-	white-space: nowrap;
-	transition: 300ms;
-}
-
-body.menu-open div.app-menu .invisible,
-body.menu-locked div.app-menu .invisible{
-	opacity: 1;
-}
-
-div.app-menu section ul li div.product-icon.home{
-	background-image: url('assets/Home.svg');
-}
-
-div.app-menu section ul li.active div.product-icon.home{
-	background-image: url('assets/Home-active.svg');
-}
-
-div.app-menu section ul li div.product-icon.checkout{
-	background-image: url('assets/Checkout.svg');
-}
-
-div.app-menu section ul li.active div.product-icon.checkout{
-	background-image: url('assets/Checkout-active.svg');
-}
-
-div.app-menu section ul li div.product-icon.items{
-	background-image: url('assets/Items.svg');
-}
-
-div.app-menu section ul li.active div.product-icon.items{
-	background-image: url('assets/Items-active.svg');
-}
-
-div.app-menu section ul li div.product-icon.customers{
-	background-image: url('assets/Customers.svg');
-}
-
-div.app-menu section ul li.active div.product-icon.customers{
-	background-image: url('assets/Customers-active.svg');
-}
-
-div.app-menu section ul li div.product-icon.team{
-	background-image: url('assets/Team.svg');
-}
-
-div.app-menu section ul li.active div.product-icon.team{
-	background-image: url('assets/Team-active.svg');
-}
-
-div.app-menu section ul li div.product-icon.marketing{
-	background-image: url('assets/Marketing.svg');
-}
-
-div.app-menu section ul li.active div.product-icon.marketing{
-	background-image: url('assets/Marketing-active.svg');
-}
-
-div.app-menu div.footer{
-	background: var(--white);
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	margin: auto;
-	padding: 12px;
-	width: 72px;
-	transition: 300ms;
-	border-right: 1px solid var(--fill-40);
-}
-
-div.app-menu div.footer div.row{
-	padding: 12px 16px;
-	transition: 150ms;
-	cursor: pointer;
-	border-radius: 6px;
-	position: relative;
-}
-
-body.menu-open div.app-menu div.footer,
-body.menu-locked div.app-menu div.footer{
-	width: 320px;
-}
-
-div.row div.image{
-	background: var(--fill-20);
-	border-radius: 50%;
-	height: 40px;
-	width: 40px;
-	position: absolute;
-	left: 4px;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-}
-
-div.row div.image p{
-	color: var(--white);
-	text-align: center;
-	line-height: 40px;
-}
-
-div.row div.text{
-	padding-left: 44px;
-}
-
 div.app-menu div.row:hover {
 	background: var(--emphasis-20);
 }
@@ -478,60 +372,113 @@ div.app-menu div.row:active {
 	background: var(--emphasis-30);
 }
 
-/* Popovers */
+/* Setup guide */
 
-div.popover{
-	position: fixed;
-	z-index: 4;
-	padding: 8px;
-	padding-top: 16px;
-	left: 320px;
-	min-width: 272px;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 200ms, padding-top 200ms, visibility 0s 200ms;
-}
-
-div.popover.show{
-	opacity: 1;
-	padding-top: 0;
-	visibility: visible;
-	transition: opacity 200ms 100ms, padding-top 200ms 100ms;
-}
-
-div.popover-content{
+div.setup-guide{
 	background: var(--white);
-	padding: 8px 12px;
+	overflow-y: auto;
+	position:  absolute;
+	top:  0;
+	bottom: 0;
+	left: 320px;
+	right: 0;
+	padding: 32px 48px;
+}
+
+div.setup-guide h2{
+	margin-bottom:  24px;
+}
+
+div.setup-guide section{
+	margin-bottom:  32px;
+}
+
+div.setup-guide section div.subheader{
+	padding: 7px 0px;
+	margin-bottom: 8px;
+}
+
+div.step{
+	padding: 16px 24px 16px 32px;
+	background:  var(--fill-50);
 	border-radius: 6px;
-	box-shadow: var(--elevation-20);
+	cursor: pointer;
+	margin-bottom:  16px;
+	position: relative;
 }
 
-div.popover ul li a p{
-	padding: 12px;
-	padding-left: 52px;
+div.step:hover{
+	background: var(--emphasis-fill-40);
 }
 
-div.popover ul li div.product-icon{
+div.step:active{
+	background: var(--emphasis-fill-30);
+}
+
+div.step.completed{
+	cursor: default;
+}
+
+div.step.completed:hover{
+	background:  var(--fill-50);
+}
+
+div.step.completed:active{
+	background:  var(--fill-50);
+}
+
+div.step.completed p {
+	color:  var(--fill-30);
+	text-decoration: line-through;
+}
+
+div.step.hidden{
+	display: none;
+}
+
+div.step:before{
+	content: '';
 	position: absolute;
-	left: 12px;
 	top: 0;
 	bottom: 0;
+	right: auto;
+	left: 12px;
 	margin: auto;
-	height: 28px;
-	width: 28px;
+	background: var(--emphasis-fill);
+	height: 8px;
+	width: 8px;
+	border-radius: 50%;
 }
 
-div.popover ul li{
-	border-radius: 6px;
-	position: relative;
-	cursor:pointer;
-	transition: 150ms;
+div.step.completed:before{
+	background: var(--fill-40);
 }
 
-div.popover ul li:hover{
-	background: var(--emphasis-20);
+section.my-products ul li:not(.home):before{
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 12px;
+	left: auto;
+	margin: auto;
+	background: var(--emphasis-fill);
+	height: 8px;
+	width: 8px;
+	border-radius: 50%;
+	display:  none;
 }
 
-div.popover ul li:active{
-	background: var(--emphasis-30);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
