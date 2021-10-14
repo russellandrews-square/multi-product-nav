@@ -131,8 +131,10 @@ $(document).ready(function(){
 
 		if (num > 0 ){
 			$("div#select-payment-products").addClass("completed");
+			$("div.take-payment").removeClass("hidden");
 		} else if ( num == 0){
 			$("div#select-payment-products").removeClass("completed");
+			$("div.take-payment").addClass("hidden");
 		}
 
 		$("div.payment-product-list ul li h3").each(function(){
@@ -200,6 +202,21 @@ $(document).ready(function(){
 			}
 		});
 	})
+	
+	var num = 1;
+	
+	$("div.take-payment").click(function(){
+		$("div.setup-guide").toggleClass("smaller");
+
+		if (num == 1){
+			$(this).children("h3").text("Untake a payment");
+			num = 0;
+		} else if (num == 0){
+			$(this).children("h3").text("Take a payment");
+			num = 1;
+		}
+	})
+
 });
 
 

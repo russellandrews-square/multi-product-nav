@@ -203,7 +203,7 @@ div.right{
 	top: 0;
 	bottom: 0;
 	right: 0;
-	background: var(--fill-50);
+	background: var(--white);
 	width: 67%;
 }
 
@@ -382,15 +382,18 @@ div.setup-guide{
 	position:  absolute;
 	top:  0;
 	bottom: 0;
-	left: 320px;
-	right: 0;
+	right:  0;
+	width: calc(100% - 320px);
 	padding: 32px 48px;
+	transition:  300ms;
 }
 
 div.setup-guide h2{
 	margin-bottom:  24px;
 	max-width: 648px;
 	margin:  0 auto 24px auto;
+	transition: 300ms;
+	line-height:  40px;
 }
 
 div.setup-guide section{
@@ -401,6 +404,10 @@ div.setup-guide section{
 div.setup-guide section div.subheader{
 	padding: 7px 0px;
 	margin-bottom: 8px;
+}
+
+div.setup-guide section div.subheader h3{
+	transition:  300ms;
 }
 
 div.step{
@@ -437,7 +444,7 @@ div.step.completed p {
 	text-decoration: line-through;
 }
 
-div.step.hidden{
+.hidden{
 	display: none;
 }
 
@@ -459,6 +466,23 @@ div.step.completed:before{
 	background: var(--fill-40);
 }
 
+div.setup-guide.smaller{
+	width: 320px;
+	padding:  16px;
+	border-left: 1px solid var(--fill-40);
+}
+
+div.setup-guide.smaller h2{
+	font-size: 18px;
+	margin-bottom: 16px;
+}
+
+div.setup-guide.smaller h3{
+	font-size: 14px;
+	line-height: 22px;
+}
+
+
 section.my-products ul li:not(.home):before{
 	content: '';
 	position: absolute;
@@ -474,7 +498,41 @@ section.my-products ul li:not(.home):before{
 	display:  none;
 }
 
+/* Take a payment button */
 
+div.take-payment{
+	position: fixed;
+	bottom: 32px;
+	left: 48px;
+	margin: auto;
+	background: var(--emphasis-fill);
+	padding: 24px 32px;
+	border-radius:  100px;
+	box-shadow: 0px 8px 24px var(--emphasis-fill);
+	opacity: 1;
+	transition: 150ms;
+	cursor:  pointer;
+}
+
+div.take-payment:hover{
+	transform: scale(1.2);
+	background: var(--emphasis-fill-20);
+}
+
+div.take-payment:active{
+	transform: scale(1.1);
+	background: var(--emphasis-fill-10);
+}
+
+div.take-payment h3{
+	color: var(--white);
+}
+
+div.take-payment.hidden{
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+}
 
 
 
