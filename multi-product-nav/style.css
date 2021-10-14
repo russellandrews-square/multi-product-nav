@@ -183,6 +183,11 @@ button.icon{
 }
 
 /* Page layout */
+
+body{
+	background: var(--black);
+}
+
 div.left,
 div.right{
 	/*width: 50%;*/
@@ -194,17 +199,18 @@ div.left{
 	top: 0;
 	bottom: 0;
 	right: auto;
-	background: var(--fill-50);
 	width: 33%;
 }
 
 div.right{
 	left:  auto;
-	top: 0;
-	bottom: 0;
-	right: 0;
+	top: 12px;
+	bottom: 12px;
+	right: 12px;
 	background: var(--white);
 	width: 67%;
+	border-radius: 12px;
+	overflow:  hidden;
 }
 
 /* Payment products */
@@ -226,18 +232,19 @@ div.payment-product-list ul li{
 }
 
 div.payment-product-list ul li h3{
-	background: var(--fill-40);
+	background: rgba(255, 255, 255, 0.08);
 	padding:  12px 24px;
 	border-radius: 100px;
+	color:  var(--white);
 	cursor: pointer;
 }
 
 div.payment-product-list ul li h3:hover{
-	background: var(--emphasis-fill-40);
+	background: #001533;
 }
 
 div.payment-product-list ul li h3:active{
-	background: var(--emphasis-fill-30);
+	background: #002559;
 }
 
 div.payment-product-list ul li h3.active{
