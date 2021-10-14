@@ -72,14 +72,6 @@ $(document).ready(function(){
 			"Customers",
 		];
 
-		// if ( ($(this).text() == "Square Point of Sale") && ( $(this).hasClass("active") == true ) ){
-		// 	newArray = productArray.concat(squarepointofsale);
-		// } 
-
-		// if ( ($(this).text() == "Square for Restaurants") && ( $(this).hasClass("active") == true ) ){
-		// 	newArray = productArray.concat(squareforrestaurants);
-		// } 
-
 		$("div.payment-product-list ul li h3.active").each(function(){
 			console.log("hey");
 
@@ -128,48 +120,13 @@ $(document).ready(function(){
 
 		$.each(newArray, function(){
 
-			var string = this;
-			var text = string.toString();
-			var noDash = text.replace(/\s+/g, '-');
+			var text = this;
+			var string = text.toString();
+			var noDash = string.replace(/\s+/g, '-');
 
-
-			$("section.my-products ul").append("<li><div class='product-icon' style='background-image: url(assets/product-icons/"+ noDash + ".svg)'></div><p class='emphasis-30'>"+ string + "</p></li>");
+			$("section.my-products ul").append("<li><div class='product-icon' style='background-image: url(assets/product-icons/"+ noDash + ".svg)'></div><p class='emphasis-30'>"+ text + "</p></li>");
 		})
-
-
 	})
-
 });
-
-function updateNav(){
-	var num = 0;
-
-	var squarepointofsale = ["Reports", "Transactions", "Balance", "Customers"];
-	var squareforrestaurants = ["Reports", "Transactions", "Balance", "Customers", "Menus", "Devices"];
-
-	var productArray = [squarepointofsale, squareforrestaurants];
-
-
-	$("div.payment-product-list ul li h3.active").each(function(){
-
-		var string = $(this).text();
-		var text = string.replace(/ /g,'');
-		var paymentProductString = text.toLowerCase();
-
-		$.each(productArray, function(){
-			$("section.my-products ul").append(
-				$.each(this,function(){
-					if(paymentProductString == this){
-					"<p>" + this + "</p>"
-				}
-				})
-			);
-			console.log("hey");
-		})
-
-		console.log(paymentProductString);
-	})
-
-}
 
 
