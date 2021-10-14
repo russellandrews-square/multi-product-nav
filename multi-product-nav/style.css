@@ -185,7 +185,7 @@ button.icon{
 /* Page layout */
 div.left,
 div.right{
-	width: 50%;
+	/*width: 50%;*/
 	position: absolute;
 }
 
@@ -195,6 +195,7 @@ div.left{
 	bottom: 0;
 	right: auto;
 	background: var(--fill-50);
+	width: 33%;
 }
 
 div.right{
@@ -203,19 +204,20 @@ div.right{
 	bottom: 0;
 	right: 0;
 	background: var(--fill-50);
+	width: 67%;
 }
 
 /* Payment products */
 
 div.payment-product-list{
 	position: absolute;
-	left: 32px;
-	right: 32px;
-	top: 32px;
-	bottom: 32px;
-	height: 300px;
+	left: 48px;
+	right: 48px;
+	top: 48px;
+	bottom: 48px;
+	height: 400px;
 	margin: auto;
-	text-align: center;
+	/*text-align: center;*/
 }
 
 div.payment-product-list ul li{
@@ -387,10 +389,14 @@ div.setup-guide{
 
 div.setup-guide h2{
 	margin-bottom:  24px;
+	max-width: 648px;
+	margin:  0 auto 24px auto;
 }
 
 div.setup-guide section{
 	margin-bottom:  32px;
+	max-width: 648px;
+	margin:  0 auto;
 }
 
 div.setup-guide section div.subheader{
