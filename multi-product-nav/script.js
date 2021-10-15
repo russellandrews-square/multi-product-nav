@@ -210,9 +210,11 @@ $(document).ready(function(){
 
 		if (num == 1){
 			$(this).children("h3").text("Untake a payment");
+			$("div.setup-guide h2").text("Notifications");
 			num = 0;
 		} else if (num == 0){
 			$(this).children("h3").text("Take a payment");
+			$("div.setup-guide h2").text("Welcome to Square");
 			num = 1;
 		}
 	})
