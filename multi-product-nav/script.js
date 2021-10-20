@@ -8,7 +8,8 @@ $(document).ready(function(){
 			"Reports",
 			"Transactions",
 			"Balance",
-			"Customers"
+			"Customers",
+			"Items"
 		];
 
 		var squareforrestaurants = [
@@ -18,7 +19,9 @@ $(document).ready(function(){
 			"Customers",
 			"Menus",
 			"Devices",
-			"Team"
+			"Team",
+			"Items",
+			"Orders"
 		];
 
 		var squareforretail = [
@@ -28,7 +31,8 @@ $(document).ready(function(){
 			"Customers",
 			"Items",
 			"Devices",
-			"Team"
+			"Team",
+			"Orders"
 		];
 
 		var appointments = [
@@ -37,6 +41,8 @@ $(document).ready(function(){
 			"Transactions",
 			"Balance",
 			"Customers",
+			"Items",
+			"Orders"
 		];
 
 		var invoices = [
@@ -45,6 +51,7 @@ $(document).ready(function(){
 			"Transactions",
 			"Balance",
 			"Customers",
+			"Items"
 		];
 
 		var virtualterminal = [
@@ -62,6 +69,7 @@ $(document).ready(function(){
 			"Transactions",
 			"Balance",
 			"Customers",
+			"Items"
 		];
 
 		var onlinecheckout = [
@@ -70,6 +78,7 @@ $(document).ready(function(){
 			"Transactions",
 			"Balance",
 			"Customers",
+			"Items"
 		];
 
 		$("div.payment-product-list ul li h3.active").each(function(){
